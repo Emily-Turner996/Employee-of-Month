@@ -1,0 +1,8 @@
+Sometimes, you need to look online to help you fix problems you might have run into.
+Here, I'll be noting the links that had info I used to help me in these situations,
+they might explain lines that I wouldn't have thought of myself but proved valuable.
+
+
+
+
+https://stackoverflow.com/questions/14639936/how-to-read-from-file-opened-in-a-mode - problem with "a+" not reading properly
