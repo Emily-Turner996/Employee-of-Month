@@ -19,6 +19,7 @@ def newVote():
         vote = input("Who do you think should win employee of the month?: ")  # prompt user for their vote
         ballot = (userID + " " + vote + "\n")  # saving information to be appended in a single line for formatting & testing
         votes.write(ballot)  # append the vote to the text file
+        print("Vote saved successfully.")
 
     elif checkUserID(userID) == False:
         print("You've already voted.")
