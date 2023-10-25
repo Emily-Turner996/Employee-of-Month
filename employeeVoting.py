@@ -49,11 +49,11 @@ def checkUserID(userID):
 
 
 """
-
+numBallots(ballotArray) - Function to calculate and display the number of people who have voted.
 """
 def numBallots(ballotArray):
-    ballotCount = str(len(ballotArray))
-    print("Total number of votes saved: " + ballotCount)
+    ballotCount = str(len(ballotArray)) # calculate the number of votes
+    print("Total number of votes saved: " + ballotCount) # display results
 
 
 # Setting up file for use:
@@ -66,7 +66,7 @@ ballotArray = votes.readlines() # save contents of text file into an array, spli
 
 # Main Program:
 newVote() # Function that allows user to vote
-numBallots(ballotArray)
+numBallots(ballotArray) # Function that calculated and display the number of votes so far
 
 
 
