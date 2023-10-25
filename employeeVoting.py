@@ -19,7 +19,7 @@ def newVote():
         vote = input("Who do you think should win employee of the month?: ")  # prompt user for their vote
         ballot = (userID + " " + vote + "\n")  # saving information to be appended in a single line for formatting & testing
         votes.write(ballot)  # append the vote to the text file
-        print("Vote saved successfully.")
+        print("Vote for " + vote + " saved successfully.")
 
     elif checkUserID(userID) == False:
         print("You've already voted.")
@@ -48,6 +48,12 @@ def checkUserID(userID):
 
 
 
+"""
+
+"""
+def numBallots(ballotArray):
+    ballotCount = str(len(ballotArray))
+    print("Total number of votes saved: " + ballotCount)
 
 
 # Setting up file for use:
@@ -60,7 +66,7 @@ ballotArray = votes.readlines() # save contents of text file into an array, spli
 
 # Main Program:
 newVote() # Function that allows user to vote
-
+numBallots(ballotArray)
 
 
 
