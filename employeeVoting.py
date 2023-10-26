@@ -19,7 +19,7 @@ def newVote(ballotArray):
     # checking to see if the voter has voted already
     if checkUserID(userID) == True:
         vote = input("Who do you think should win employee of the month?: ")  # prompt user for their vote
-        confirmVote(vote) #TEST FOR THE MINUTE
+        vote = confirmVote(vote) # make sure the person the user actually wants to vote for is saved to vote variable (chance for user to change their mind)
         ballot = (userID + " " + vote + "\n")  # saving information to be appended in a single line for formatting & testing
         votes.write(ballot)  # append the vote to the text file
         ballotArray.append([userID, vote]) # need to update ballotArray here so that the correct number of votes can be counted
@@ -66,7 +66,7 @@ def confirmVote(vote):
 
         confirmation = input("Are you sure you want to vote for " + confirmedVote + "? [y/n]: ").lower().strip() #make sure this is actually the person they want to vote for before it gets saved
 
-
+    return confirmedVote # return whatever the confirmed vote is
 
 
 """
