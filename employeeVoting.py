@@ -19,6 +19,7 @@ def newVote(ballotArray):
     # checking to see if the voter has voted already
     if checkUserID(userID) == True:
         vote = input("Who do you think should win employee of the month?: ")  # prompt user for their vote
+        confirmVote(vote) #TEST FOR THE MINUTE
         ballot = (userID + " " + vote + "\n")  # saving information to be appended in a single line for formatting & testing
         votes.write(ballot)  # append the vote to the text file
         ballotArray.append([userID, vote]) # need to update ballotArray here so that the correct number of votes can be counted
@@ -51,10 +52,20 @@ def checkUserID(userID):
 
 
 """
-
+Function to make sure the user didn't make a mistake when typing who they voted for. This function exists to help with potential user error.
 """
-#def confirmVote(vote): # you totally don't see this yet
-    
+def confirmVote(vote):
+    confirmedVote = vote
+    confirmation = input("Are you sure you want to vote for " + confirmedVote + "? [y/n]: ").lower().strip() #get input and format it to be lowercase and remove (external) whitespace
+
+    while(confirmation != 'y'): #loop runs until user enters 'y'
+        if (confirmation == 'n'): # if the user enters 'n', code runs to get their new vote
+            confirmedVote = input("Enter the name of the person you'd like to vote for: ")
+        else: # if the user entered neither y or n, prompt them to only enter y or n
+            print("Please only enter 'y' or 'n'")
+
+        confirmation = input("Are you sure you want to vote for " + confirmedVote + "? [y/n]: ").lower().strip() #make sure this is actually the person they want to vote for before it gets saved
+
 
 
 
